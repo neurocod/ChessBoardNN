@@ -102,12 +102,10 @@ File sizes:
 Development
 -----------
 
-*   The network was created in a **specialized IDE**.
-*   Exported to **Python** for integration into other projects.
+The network was created in a specialized IDE, and then exported to Python.
 
 * * *
 
 Class Diagram
 -------------
-
-_(to be added)_
+<img width="977" height="810" alt="Image" src="https://github.com/user-attachments/assets/5df55fb9-7112-4c39-b117-0b50e231d959" />
