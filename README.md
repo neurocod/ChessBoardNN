@@ -1,6 +1,15 @@
-*ChessBoard Neural Network*
-Converts chessboard moves, like `e2 e4`, into actual chessboard representation:
-'''
+ChessBoard Neural Network
+=========================
+
+A neural network that converts chess moves (e.g. `e2 e4`) into an actual **chessboard representation**.  
+It can be used as an **input layer** for a larger neural engine.
+
+* * *
+
+Example
+-------
+
+```text
 > test; e2 and then e4
  |ABCDEFGH
 8|rnbqkbnr
@@ -22,11 +31,16 @@ Converts chessboard moves, like `e2 e4`, into actual chessboard representation:
 3|........
 2|PPPP.PPP
 1|RNBQKBNR
-'''
-
-Purpose of this network is to embed it into actual neural engine as an inpul layer.
-Main output is not console text, but rather an embedding:
 ```
+
+* * *
+
+Embedding Output
+----------------
+
+The main output is not console text, but an **embedding** that represents the board in memory:
+
+```text
 > repr
 Current chessboard representation by the network in memory:
  RNBQKPrnbqkp.|RNBQKPrnbqkp.|RNBQKPrnbqkp.|RNBQKPrnbqkp.|RNBQKPrnbqkp.|RNBQKPrnbqkp.|RNBQKPrnbqkp.|RNBQKPrnbqkp.|
@@ -41,31 +55,59 @@ Current chessboard representation by the network in memory:
  ......1......|.......1.....|........1....|.........1...|..........1..|........1....|.......1.....|......1......]
 ```
 
-*Class diagram*
+* * *
 
+Modes
+-----
 
-*Modes*
-Newly created network doesn't print anything to console for faster operation. This is controled by activation on neuron [0].
-```
-    def setPrintBoard(self, usePrint: bool = True):
-        # This is special neuron that tweaks net to print board in ascii mode after each move.
-        self._activations[0] = 1 if usePrint else 0
-        # Asii printing is slow - few cycles for each letter.
-        # If you use network to embed into another,
-        # use embedding() to obtain inner state faster and directly
-```
-All further printing work is done using standard feed forward cycle.
+By default, the network does not print anything to the console for faster operation.  
+This behavior is controlled by **neuron \[0\]**:
 
-* Network size*
+```python
+def setPrintBoard(self, usePrint: bool = True):
+    # This special neuron toggles ASCII board printing after each move.
+    self._activations[0] = 1 if usePrint else 0
+    # ASCII printing is slow — several cycles per character.
+    # For embedding into another system, call embedding() to obtain
+    # the internal state faster and directly.
 ```
+
+Printing is handled via the standard feed-forward cycle.
+
+* * *
+
+Network Info
+------------
+
+```text
 > info
 Neurons: 5553
 Links: 18287
 Active neurons: 256
 Average connectivity: 3.29
 ```
-If to exclude neurons which make it possible for ASCII printing, network size will decrease to 4521 neurons (-1032 neurons, 22%) and 15455 links (-2832 links, 18%).
-Unzipped file ChessBoardNN.py is 153Kb big, zipped - 28 Kb.
 
-*Development*
-Network was created in specialized IDE, then exported to Python.
+If ASCII-printing neurons are excluded:
+
+*   **4521 neurons** (–1032, ~22%)
+*   **15455 links** (–2832, ~18%)
+
+File sizes:
+
+*   **ChessBoardNN.py** — 153 KB (unzipped)
+*   **ChessBoardNN.py.zip** — 28 KB
+
+* * *
+
+Development
+-----------
+
+*   The network was created in a **specialized IDE**.
+*   Exported to **Python** for integration into other projects.
+
+* * *
+
+Class Diagram
+-------------
+
+_(to be added)_
