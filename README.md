@@ -108,4 +108,27 @@ The network was created in a specialized IDE, and then exported to Python.
 
 Class Diagram
 -------------
-<img width="977" height="810" alt="Image" src="https://github.com/user-attachments/assets/5df55fb9-7112-4c39-b117-0b50e231d959" />
+<img alt="Class Diagram" src="https://github.com/user-attachments/assets/5df55fb9-7112-4c39-b117-0b50e231d959" />
+
+Architecture
+------------
+
+SemanticNN is a combination of LSTM and semantic networks.
+All LSTM neurons preserve their activation between cycles. For optimization, these neurons are grouped at the beginning of the neuron array, up to index self._permanentCount.
+
+From semantic networks, the model inherits:
+
+* a variable number of links per neuron,
+
+* the ability to form loops.
+
+The output embedding is represented by a contiguous block of neurons: `self._permanentCount`. From semantic networks it received variable links count per neuron and ability to have loops. Output embedding is grouped into sequential neurons:
+```python
+def embedding(self):
+	# 832 neurons stand for 64 cells * 13 options for each cell: empty cell, 6 black and 6 white pieces.
+	return self._activations[68:900]
+```
+
+License
+-------
+BSD-2-Clause license
