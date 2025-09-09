@@ -102,7 +102,8 @@ File sizes:
 Development
 -----------
 
-The network was created in a specialized IDE, and then exported to Python.
+The network was created in a specialized IDE, and then exported to Python
+<img width="1280" height="720" alt="IDE screenshot" src="https://github.com/user-attachments/assets/a550b059-042f-4686-a786-cf2792d2b7a8" />
 
 * * *
 
