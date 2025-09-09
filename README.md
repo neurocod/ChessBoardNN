@@ -114,7 +114,7 @@ Architecture
 ------------
 
 SemanticNN is a combination of LSTM and semantic networks.
-All LSTM neurons preserve their activation between cycles. For optimization, these neurons are grouped at the beginning of the neuron array, up to index self._permanentCount.
+All LSTM neurons preserve their activation between cycles. For optimization, these neurons are grouped at the beginning of the neuron array, up to index `self._permanentCount`.
 
 From semantic networks, the model inherits:
 
@@ -122,7 +122,6 @@ From semantic networks, the model inherits:
 
 * the ability to form loops.
 
-The output embedding is represented by a contiguous block of neurons: `self._permanentCount`. From semantic networks it received variable links count per neuron and ability to have loops. Output embedding is grouped into sequential neurons:
 ```python
 def embedding(self):
 	# 832 neurons stand for 64 cells * 13 options for each cell: empty cell, 6 black and 6 white pieces.
