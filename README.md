@@ -103,13 +103,13 @@ Development
 -----------
 
 The network was created in a specialized IDE, and then exported to Python
-<img width="1280" height="720" alt="IDE screenshot" src="https://github.com/user-attachments/assets/a550b059-042f-4686-a786-cf2792d2b7a8" />
+<img width="1280" height="720" alt="IDE screenshot" src="https://github.com/user-attachments/assets/674326d9-207b-4180-b5f5-950694159bd9" />
 
 * * *
 
 Class Diagram
 -------------
-<img width="489" height="405" alt="Class Diagram" src="https://github.com/user-attachments/assets/5df55fb9-7112-4c39-b117-0b50e231d959" />
+<img width="481" height="420" alt="class diagram" src="https://github.com/user-attachments/assets/56f4b943-88a2-4793-9169-ac92df9e1e1a" />
 
 Architecture
 ------------
