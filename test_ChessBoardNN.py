@@ -1,4 +1,7 @@
-from ChessBoardNN import ChessBoardNN
+try:
+    from .ChessBoardNN import ChessBoardNN
+except ImportError:
+    from ChessBoardNN import ChessBoardNN
 import unittest
 
 class NetTest(unittest.TestCase):

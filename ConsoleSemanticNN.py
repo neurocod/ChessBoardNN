@@ -1,4 +1,7 @@
-from SemanticNN import SemanticNN
+try:
+    from .SemanticNN import SemanticNN
+except ImportError:
+    from SemanticNN import SemanticNN
 import numpy as np
 import re
 

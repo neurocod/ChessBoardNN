@@ -1,4 +1,7 @@
-from ConsoleSemanticNN import ConsoleSemanticNN
+try:
+    from .ConsoleSemanticNN import ConsoleSemanticNN
+except ImportError:
+    from ConsoleSemanticNN import ConsoleSemanticNN
 import numpy as np
 from typing import override
 
