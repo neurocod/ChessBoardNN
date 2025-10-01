@@ -14,8 +14,8 @@ class ConsoleSemanticNN(SemanticNN):
         self._awaitingInput = []
         self._sensors = {}  # token to neuron
         self._effectors = {}  # neuron to token
-        self._printToConsole = True # False for unit tests
-        self._outputBuffer = [] # useful for unit tests
+        self._printToConsole = True # False -> accumulate to _outputBuffer only
+        self._outputBuffer = [] # for Unit Tests etc
 
     def loadSensors(self): # Read input from console, tokenize it, and activate corresponding neurons
         if len(self._awaitingInput) == 0:
