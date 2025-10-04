@@ -36,7 +36,7 @@ class NetTest(unittest.TestCase):
         self.assertEqual(s, expected)
         
         fen = self.net.toFenString(expected)
-        self.assertEqual(fen, 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR ')
+        self.assertEqual(fen, 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1')
 
     def testPawnEnPassant(self):
         s = self.process("""en passant:
