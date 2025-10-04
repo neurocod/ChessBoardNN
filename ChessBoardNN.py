@@ -56,6 +56,17 @@ class ChessBoardNN(ConsoleSemanticNN):
         # 8 chessboard cells per row * 13 (6 white pieces + 6 black pieces + empty cell)
         self.printActivations(self.embedding(), 13, 13*8)
 
+    # https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation
+    # TODO move this function to network itself
+    def toFenString(self, myGenerated)->str:
+        s = myGenerated.replace('ABCDEFGH', '').replace('|', '').strip().replace('\n', '/')
+        for i in range(9):
+            s = s.replace(f'{i}', '')
+        for i in range(8, 0, -1):
+            s = s.replace('.' * i, f'{i}')
+        s += ' '
+        return s
+
 if __name__ == "__main__":
     demoNet = ChessBoardNN()
     demoNet.setPrintBoard()

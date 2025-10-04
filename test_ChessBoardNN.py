@@ -23,7 +23,7 @@ class NetTest(unittest.TestCase):
     
     def testPawn(self):
         s = self.process("e2 e4")
-        self.assertEqual(s, """ |ABCDEFGH
+        expected = """ |ABCDEFGH
 8|rnbqkbnr
 7|pppppppp
 6|........
@@ -32,8 +32,12 @@ class NetTest(unittest.TestCase):
 3|........
 2|PPPP.PPP
 1|RNBQKBNR
-""")
+"""
+        self.assertEqual(s, expected)
         
+        fen = self.net.toFenString(expected)
+        self.assertEqual(fen, 'rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR ')
+
     def testPawnEnPassant(self):
         s = self.process("""en passant:
 1 E2 E4
