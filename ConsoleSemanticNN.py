@@ -169,6 +169,11 @@ Type 'quit' to exit, 'info' for network info, 'all' to see all neurons activatio
                 display_value = effector_value
             print(f"'{display_value}'->{neuron_num}")
 
+    def consumeOutputBuffer(self)->str:
+        ret = ''.join(self._outputBuffer)
+        self._outputBuffer = []
+        return ret
+
 if __name__ == "__main__":
     print("Subclass this network and fill with data, look at examples")
     quit(0)
